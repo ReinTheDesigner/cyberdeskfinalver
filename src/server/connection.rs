@@ -197,8 +197,8 @@ pub struct Connection {
     server: super::ServerPtrWeak,
     hash: Hash,
     read_jobs: Vec<fs::TransferJob>,
-    timer: crate::RustDeskInterval,
-    file_timer: crate::RustDeskInterval,
+    timer: crate::CyberDeskInterval,
+    file_timer: crate::CyberDeskInterval,
     file_transfer: Option<(String, bool)>,
     view_camera: bool,
     terminal: bool,
@@ -3970,7 +3970,7 @@ impl Connection {
     #[cfg(all(target_os = "windows", feature = "flutter"))]
     async fn send_printer_request(&mut self, data: Vec<u8>) {
         // This path is only used to identify the printer job.
-        let path = format!("RustDesk://FsJob//Printer/{}", get_time());
+        let path = format!("CyberDesk://FsJob//Printer/{}", get_time());
 
         let msg = fs::new_send(0, fs::JobType::Printer, path.clone(), 1, false);
         self.send(msg).await;

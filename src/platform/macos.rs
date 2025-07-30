@@ -294,7 +294,7 @@ fn update_daemon_agent(agent_plist_file: String, update_source_dir: String, sync
 
 fn correct_app_name(s: &str) -> String {
     let s = s.replace("rustdesk", &crate::get_app_name().to_lowercase());
-    let s = s.replace("RustDesk", &crate::get_app_name());
+    let s = s.replace("CyberDesk", &crate::get_app_name());
     s
 }
 
@@ -628,8 +628,8 @@ pub fn start_os_service() {
     /* // mouse/keyboard works in prelogin now with launchctl asuser.
        // below can avoid multi-users logged in problem, but having its own below problem.
        // Not find a good way to start --cm without root privilege (affect file transfer).
-       // one way is to start with `launchctl asuser <uid> open -n -a /Applications/RustDesk.app/ --args --cm`,
-       // this way --cm is started with the user privilege, but we will have problem to start another RustDesk.app
+       // one way is to start with `launchctl asuser <uid> open -n -a /Applications/CyberDesk.app/ --args --cm`,
+       // this way --cm is started with the user privilege, but we will have problem to start another CyberDesk.app
        // with open in explorer.
         use std::sync::{
             atomic::{AtomicBool, Ordering},
@@ -717,7 +717,7 @@ pub fn update_me() -> ResultType<()> {
     );
 
     let cmd = std::env::current_exe()?;
-    // RustDesk.app/Contents/MacOS/RustDesk
+    // CyberDesk.app/Contents/MacOS/CyberDesk
     let app_dir = cmd
         .parent()
         .and_then(|p| p.parent())
@@ -743,8 +743,8 @@ pub fn update_me() -> ResultType<()> {
         let update_body = format!(
             r#"
 do shell script "
-pgrep -x 'RustDesk' | grep -v {} | xargs kill -9 && rm -rf /Applications/RustDesk.app && cp -R '{}' /Applications/ && chown -R {}:staff /Applications/RustDesk.app
-" with prompt "RustDesk wants to update itself" with administrator privileges
+pgrep -x 'CyberDesk' | grep -v {} | xargs kill -9 && rm -rf /Applications/CyberDesk.app && cp -R '{}' /Applications/ && chown -R {}:staff /Applications/CyberDesk.app
+" with prompt "CyberDesk wants to update itself" with administrator privileges
     "#,
             std::process::id(),
             app_dir,
@@ -781,7 +781,7 @@ pub fn update_to(file: &str) -> ResultType<()> {
 }
 
 fn extract_dmg(dmg_path: &str, target_dir: &str) -> ResultType<()> {
-    let mount_point = "/Volumes/RustDeskUpdate";
+    let mount_point = "/Volumes/CyberDeskUpdate";
     let target_path = Path::new(target_dir);
 
     if target_path.exists() {
@@ -803,7 +803,7 @@ fn extract_dmg(dmg_path: &str, target_dir: &str) -> ResultType<()> {
     }
     let _guard = DmgGuard(mount_point);
 
-    let app_name = "RustDesk.app";
+    let app_name = "CyberDesk.app";
     let src_path = format!("{}/{}", mount_point, app_name);
     let dest_path = format!("{}/{}", target_dir, app_name);
 
@@ -826,7 +826,7 @@ fn extract_dmg(dmg_path: &str, target_dir: &str) -> ResultType<()> {
 }
 
 fn update_extracted(target_dir: &str) -> ResultType<()> {
-    let exe_path = format!("{}/RustDesk.app/Contents/MacOS/RustDesk", target_dir);
+    let exe_path = format!("{}/CyberDesk.app/Contents/MacOS/CyberDesk", target_dir);
     let _child = unsafe {
         Command::new(&exe_path)
             .arg("--update")

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="../res/logo-header.svg" alt="RustDesk - Twój zdalny pulpit"><br>
+  <img src="../res/logo-header.svg" alt="CyberDesk - Twój zdalny pulpit"><br>
   <a href="#darmowe-serwery-publiczne">Serwery</a> •
   <a href="#podstawowe-kroki-do-kompilacji">Kompilacja</a> •
   <a href="#jak-kompilować-za-pomocą-dockera">Docker</a> •
@@ -13,11 +13,11 @@ Porozmawiaj z nami na: [Discord](https://discord.gg/nDceKgxnkV) | [Twitter](http
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/I2I04VU09)
 
-Kolejny program do zdalnego pulpitu, napisany w Rust. Działa od samego początku, nie wymaga konfiguracji. Masz pełną kontrolę nad swoimi danymi, bez obaw o bezpieczeństwo. Możesz skorzystać z naszego darmowego serwera publicznego, [skonfigurować własny](https://rustdesk.com/server), lub [napisać własny serwer](https://github.com/rustdesk/rustdesk-server-demo).
+Kolejny program do zdalnego pulpitu, napisany w Rust. Działa od samego początku, nie wymaga konfiguracji. Masz pełną kontrolę nad swoimi danymi, bez obaw o bezpieczeństwo. Możesz skorzystać z naszego darmowego serwera publicznego, [skonfigurować własny](https://cyberdesk.app/server), lub [napisać własny serwer](https://github.com/rustdesk/rustdesk-server-demo).
 
 ![image](https://user-images.githubusercontent.com/71636191/171661982-430285f0-2e12-4b1d-9957-4a58e375304d.png) 
 
-RustDesk zaprasza do współpracy każdego. Zobacz [`docs/CONTRIBUTING-PL.md`](CONTRIBUTING-PL.md) pomoc w uruchomieniu programu.
+CyberDesk zaprasza do współpracy każdego. Zobacz [`docs/CONTRIBUTING-PL.md`](CONTRIBUTING-PL.md) pomoc w uruchomieniu programu.
 
 [**PYTANIA I ODPOWIEDZI (FAQ)**](https://github.com/rustdesk/rustdesk/wiki/FAQ)
 
@@ -140,7 +140,7 @@ Lub jeśli uruchamiasz plik wykonywalny wersji:
 target/release/rustdesk
 ```
 
-Upewnij się, że uruchamiasz te polecenia z katalogu głównego repozytorium RustDesk, w przeciwnym razie aplikacja może nie być w stanie znaleźć wymaganych zasobów. Należy również pamiętać, że inne podpolecenia ładowania, takie jak `install` lub `run` nie są obecnie obsługiwane za pomocą tej metody, ponieważ instalowałyby lub uruchamiały program wewnątrz kontenera zamiast na hoście.
+Upewnij się, że uruchamiasz te polecenia z katalogu głównego repozytorium CyberDesk, w przeciwnym razie aplikacja może nie być w stanie znaleźć wymaganych zasobów. Należy również pamiętać, że inne podpolecenia ładowania, takie jak `install` lub `run` nie są obecnie obsługiwane za pomocą tej metody, ponieważ instalowałyby lub uruchamiały program wewnątrz kontenera zamiast na hoście.
 
 ## Struktura plików
 
